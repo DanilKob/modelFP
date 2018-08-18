@@ -1,0 +1,6 @@
+package model.dao;
+
+public abstract class AbstractDaoFactory {
+    public abstract UserDao createUserDao();
+    public abstract BankAccountDao createBankAccountDao();
+}
