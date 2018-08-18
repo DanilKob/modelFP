@@ -7,7 +7,12 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-public class JDBCUserDao implements UserDao {
+public class JDBCUserDao extends AbstractJDBCGenericDao<User> implements UserDao{
+
+
+    protected JDBCUserDao(Connection connection) {
+        super(connection);
+    }
 
     @Override
     public void create(User entity) {
@@ -31,11 +36,6 @@ public class JDBCUserDao implements UserDao {
 
     @Override
     public void delete(int id) {
-
-    }
-
-    @Override
-    public void close() {
 
     }
 }

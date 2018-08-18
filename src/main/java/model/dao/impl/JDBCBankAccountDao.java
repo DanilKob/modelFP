@@ -6,11 +6,10 @@ import model.entity.BankAccount;
 import java.sql.Connection;
 import java.util.List;
 
-public class JDBCBankAccountDao implements BankAccountDao {
-    private Connection connection;
+public class JDBCBankAccountDao extends AbstractJDBCGenericDao<BankAccount> implements BankAccountDao {
 
-    public JDBCBankAccountDao(Connection connection){
-        this.connection = connection;
+    protected JDBCBankAccountDao(Connection connection) {
+        super(connection);
     }
 
     @Override
@@ -35,11 +34,6 @@ public class JDBCBankAccountDao implements BankAccountDao {
 
     @Override
     public void delete(int id) {
-
-    }
-
-    @Override
-    public void close() {
 
     }
 }
