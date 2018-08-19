@@ -9,5 +9,4 @@ public interface ColumName {
     String USER_LAST_NAME = "last_name";
     String USER_MIDDLE_NAME = "middle_name";
     String USER_ROLE = "role";
-
 }
