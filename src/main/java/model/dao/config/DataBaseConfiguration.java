@@ -1,5 +1,8 @@
 package model.dao.config;
 
+import model.dao.AbstractDaoFactory;
+import model.dao.impl.JDBCDaoFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -7,6 +10,8 @@ import java.util.Properties;
 public class DataBaseConfiguration {
     // todo singleton???
     private static DataBaseConfiguration instance = new DataBaseConfiguration();
+
+    public static final AbstractDaoFactory factory = new JDBCDaoFactory();
 
     private Properties properties = loadProperties(ConfigurationKeys.PROPERTIES_PATH);
 
