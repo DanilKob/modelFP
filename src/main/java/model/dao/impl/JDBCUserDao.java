@@ -1,5 +1,6 @@
 package model.dao.impl;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import model.dao.UserDao;
 import model.dao.statement.Statements;
 import model.entity.User;
@@ -27,9 +28,12 @@ public class JDBCUserDao extends AbstractJDBCGenericDao<User> implements UserDao
             preparedStatement.setString(4,entity.getLogin());
             preparedStatement.setString(5,entity.getPassword());
             //todo remove sout
-            System.out.println(preparedStatement.execute());
+            preparedStatement.execute();
+        } catch (MySQLIntegrityConstraintViolationException e){
+            System.out.println("Not unique login");
         } catch (SQLException e) {
             e.printStackTrace();
+            //
             // todo add logger
             throw new RuntimeException();
         }
