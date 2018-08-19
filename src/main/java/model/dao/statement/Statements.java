@@ -7,7 +7,7 @@ public interface Statements {
             + ColumName.USER_LAST_NAME+","
             + ColumName.USER_MIDDLE_NAME+","
             + ColumName.USER_LOGIN+","
-            + ColumName.USER_PASSWORD+","
+            + ColumName.USER_PASSWORD
             +")"
             +"VALUES (?,?,?,?,?)";
     String SELECT_USER_BY_ID = "";
